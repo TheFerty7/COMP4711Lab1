@@ -7,7 +7,16 @@
     </head>
     <body>
         <?php
-        echo "Hello";
+        $temp = 'Eric';
+        echo 'Hi, my name is ';
+        echo $temp;
+        $temp = "322";
+        echo 'I am level ';
+        echo $temp;
+        $name = 'Jim';
+        $what = 'geek';
+        $level = '10';
+        echo 'Hi, my name is'.$name.'. and I am a level '.$level.'.'.$what;
         ?>
     </body>
 </html>
