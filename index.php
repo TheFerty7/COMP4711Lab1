@@ -19,7 +19,7 @@
         $level = '10';
         echo 'Hi, my name is'.$name.'. and I am a level '.$level.'.'.$what;
         echo '<br/>';
-        $hoursworked = 10;
+        $hourworked = 10;
         $rate = 12;
         $total = $hoursworked * $rate;
         echo 'You owe me '.$total;
@@ -32,9 +32,14 @@
         }
         echo ($total >0) ? 'You owe me'.$toal : "You're welcome";
         echo '<br/>';
+        $position = $_GET['board'];
+        $squares = str_split($position);
+        
         
         
         echo '<br/>';
+        
+        
         ?>
     </body>
 </html>
