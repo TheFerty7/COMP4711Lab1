@@ -24,13 +24,17 @@
         $total = $hoursworked * $rate;
         echo 'You owe me '.$total;
         echo '<br/>';
+        $hoursworked = $_GET['hours'];
         if($hoursworked > 40){
             $total = $hoursworked * $rate *1.5;
         }else{
             $total = $hoursworked * $rate;
         }
         echo ($total >0) ? 'You owe me'.$toal : "You're welcome";
-        echo '<br/>'
+        echo '<br/>';
+        
+        
+        echo '<br/>';
         ?>
     </body>
 </html>
