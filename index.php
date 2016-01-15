@@ -35,6 +35,7 @@
         $position = $_GET['board'];
         $squares = str_split($position);
         
+		/*
         if(winner('x'$squares)){
 			echo 'You win.';
 		}else if (winner('o', $squares)){
@@ -44,7 +45,17 @@
 		}
         
         echo '<br/>';
-        
+        */
+		
+		$game = new Game($squares);
+		if($game->winner('x')){
+			echo 'You win';
+			
+		}else if ($game->winner('o')){
+			echo 'I win';
+		}else{
+			echo 'No winner yet';
+		}
         
         ?>
     </body>
@@ -97,5 +108,26 @@
 				}
 			}
 		}
+	}
+	
+	class Game{
+		var $position;
+		
+		function construct($squares){
+			$this->position = str_split($squares);
+		}
+		
+		function winner3($token){
+		for($row = 0; $row<3; $row++){
+			$result = true;
+			for($col =0; $col<3; $col++){
+				if(this->$position[3*$row+$col] != $token){
+					$result = false;
+				}
+			}
+		}
+	}
+		
+		
 	}
 ?>
