@@ -48,14 +48,21 @@
         */
 		
 		$game = new Game($squares);
-		if($game->winner('x')){
-			echo 'You win';
-			
-		}else if ($game->winner('o')){
-			echo 'I win';
-		}else{
-			echo 'No winner yet';
+		$state = false;
+		while(!$state){
+			if($game->winner('x')){
+				echo 'You win';
+				$state = true;
+				
+			}else if ($game->winner('o')){
+				echo 'I win';
+				$state = true;
+			}else{
+				echo 'No winner yet';
+				$game->pick_move();
+			}
 		}
+		
         
         ?>
     </body>
@@ -152,6 +159,14 @@
 			$move = implode($this->newposition);
 			$link = '/?board='.$move;
 			return '<td><a href="'.$link.'">-</a></td>';
+		}
+		
+		function pick_move(){
+			for($pos=0; $pos < 9; $pos++){
+				if($this->position[$pos] != 'x' || $this->position[$pos] != 'o'){
+					$this->position[$pos] = 'x';
+				}
+			}
 		}
 		
 	}
