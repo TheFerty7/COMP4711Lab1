@@ -87,4 +87,15 @@
 				$won = true;
 		} else 
 	}
+
+	function winner2($token, $position){
+		for($row = 0; $row<3; $row++){
+			$result = true;
+			for($col =0; $col<3; $col++){
+				if($position[3*$row+$col] != $token){
+					$result = false;
+				}
+			}
+		}
+	}
 ?>
